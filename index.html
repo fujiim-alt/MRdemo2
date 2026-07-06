@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>地下AR表示</title>
+
+  <script
+    type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f2f2f2;
+    }
+
+    model-viewer {
+      width: 100vw;
+      height: 100vh;
+      background: #f2f2f2;
+    }
+
+    .panel {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+      font-size: 14px;
+      line-height: 1.5;
+      z-index: 10;
+    }
+
+    .title {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .note {
+      color: #444;
+      font-size: 13px;
+    }
+
+    .ar-button {
+      position: fixed;
+      left: 50%;
+      bottom: 100px;
+      transform: translateX(-50%);
+      padding: 12px 20px;
+      border: none;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      z-index: 20;
+    }
+  </style>
+</head>
+
+<body>
+  <model-viewer
+    src="./underground_45x16_marker.glb"
+    ios-src="./underground_45x16_marker.usdz"
+    alt="地下構造物AR表示"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    touch-action="pan-y"
+    auto-rotate="false"
+    shadow-intensity="0"
+    exposure="1"
+    environment-image="neutral"
+    scale="1 1 1"
+    placement="floor">
+
+    <button slot="ar-button" class="ar-button">
+      ARで表示
+    </button>
+  </model-viewer>
+
+  <div class="panel">
+    <div class="title">地下AR表示モデル</div>
+    <div>底面：45m × 16m</div>
+    <div>GL -2.5m ～ -6.0m：薄めの半透明</div>
+    <div>GL -6.0m ～ -9.5m：濃いめの半透明</div>
+    <div class="note">枠線と四隅の十字マーカー付き</div>
+  </div>
+</body>
+</html>
