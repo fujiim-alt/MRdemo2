@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>地下AR表示</title>
 
   <script
@@ -27,19 +28,24 @@
       background: #f2f2f2;
     }
 
+    /*
+      AR開始ボタン
+      bottom: 22vh; で、スマホの下端からかなり上に表示します。
+    */
     .ar-button {
       position: absolute;
       left: 50%;
-      bottom: 90px;
+      bottom: 22vh;
       transform: translateX(-50%);
-      padding: 12px 20px;
+      padding: 14px 24px;
       border: none;
       border-radius: 999px;
       background: #111;
       color: #fff;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 700;
-      z-index: 20;
+      z-index: 999;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     }
 
     .panel {
@@ -49,7 +55,7 @@
       bottom: 12px;
       padding: 12px 14px;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
       font-size: 14px;
       line-height: 1.5;
