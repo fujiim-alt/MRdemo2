@@ -28,16 +28,12 @@
       background: #f2f2f2;
     }
 
-    /*
-      AR開始ボタン
-      bottom: 22vh; で、スマホの下端からかなり上に表示します。
-    */
     .ar-button {
       position: absolute;
       left: 50%;
-      bottom: 22vh;
+      bottom: 18vh;
       transform: translateX(-50%);
-      padding: 14px 24px;
+      padding: 14px 26px;
       border: none;
       border-radius: 999px;
       background: #111;
@@ -46,30 +42,6 @@
       font-weight: 700;
       z-index: 999;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-    }
-
-    .panel {
-      position: fixed;
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-      font-size: 14px;
-      line-height: 1.5;
-      z-index: 10;
-    }
-
-    .title {
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .note {
-      color: #444;
-      font-size: 13px;
     }
   </style>
 </head>
@@ -91,13 +63,5 @@
       ARで表示
     </button>
   </model-viewer>
-
-  <div class="panel">
-    <div class="title">地下AR表示モデル</div>
-    <div>底面：45m × 16m</div>
-    <div>GL ～ -2.5m：薄い半透明</div>
-    <div>GL -2.5m ～ -6.0m：濃い半透明</div>
-    <div class="note">地表枠線・四隅十字マーカー付き</div>
-  </div>
 </body>
 </html>
